@@ -93,7 +93,7 @@ gui.Parent = LocalPlayer:WaitForChild("PlayerGui")
 ----------------------------------------------------------------
 local loader = Instance.new("Frame")
 loader.Size                   = UDim2.fromScale(1, 1)
-loader.BackgroundColor3       = Color3.fromRGB(20, 12, 30)
+loader.BackgroundColor3       = Color3.fromRGB(255, 235, 245)
 loader.BackgroundTransparency = 0.05
 loader.BorderSizePixel        = 0
 loader.ZIndex                 = 50
@@ -101,9 +101,9 @@ loader.Parent                 = gui
 
 local loaderGrad = Instance.new("UIGradient", loader)
 loaderGrad.Color = ColorSequence.new{
-    ColorSequenceKeypoint.new(0,   Color3.fromRGB(40, 20, 60)),
-    ColorSequenceKeypoint.new(0.5, Color3.fromRGB(70, 35, 95)),
-    ColorSequenceKeypoint.new(1,   Color3.fromRGB(30, 60, 100)),
+    ColorSequenceKeypoint.new(0,   Color3.fromRGB(255, 230, 240)),
+    ColorSequenceKeypoint.new(0.5, Color3.fromRGB(255, 218, 232)),
+    ColorSequenceKeypoint.new(1,   Color3.fromRGB(245, 210, 230)),
 }
 loaderGrad.Rotation = 135
 
@@ -114,40 +114,40 @@ title.BackgroundTransparency = 1
 title.Text                   = "\xE2\x9D\x84  cuteuwu snow  \xE2\x9D\x84"
 title.Font                   = Enum.Font.GothamBlack
 title.TextSize               = 34
-title.TextColor3             = Color3.fromRGB(255, 220, 240)
-title.TextStrokeTransparency = 0.5
-title.TextStrokeColor3       = Color3.fromRGB(255, 120, 200)
+title.TextColor3             = Color3.fromRGB(150, 70, 120)
+title.TextStrokeTransparency = 0.85
+title.TextStrokeColor3       = Color3.fromRGB(255, 255, 255)
 title.ZIndex                 = 51
 
 local sub = Instance.new("TextLabel", loader)
 sub.Size                   = UDim2.new(1, 0, 0, 22)
 sub.Position               = UDim2.new(0, 0, 0.18, 60)
 sub.BackgroundTransparency = 1
-sub.Text                   = "loading your sweetest macro\xE2\x99\xA1"
+sub.Text                   = "getting your sweet little macro ready\xE2\x99\xA1"
 sub.Font                   = Enum.Font.GothamSemibold
 sub.TextSize               = 16
-sub.TextColor3             = Color3.fromRGB(255, 200, 230)
+sub.TextColor3             = Color3.fromRGB(180, 110, 150)
 sub.ZIndex                 = 51
 
 -- progress bar
 local barBG = Instance.new("Frame", loader)
 barBG.Size               = UDim2.new(0, 280, 0, 16)
 barBG.Position           = UDim2.new(0.5, -140, 0.45, 0)
-barBG.BackgroundColor3   = Color3.fromRGB(60, 40, 80)
+barBG.BackgroundColor3   = Color3.fromRGB(255, 210, 225)
 barBG.BorderSizePixel    = 0
 barBG.ZIndex             = 51
 local barC = Instance.new("UICorner", barBG); barC.CornerRadius = UDim.new(1, 0)
 
 local bar = Instance.new("Frame", barBG)
 bar.Size               = UDim2.new(0, 0, 1, 0)
-bar.BackgroundColor3   = Color3.fromRGB(255, 182, 219)
+bar.BackgroundColor3   = Color3.fromRGB(245, 160, 200)
 bar.BorderSizePixel    = 0
 bar.ZIndex             = 52
 local barC2 = Instance.new("UICorner", bar); barC2.CornerRadius = UDim.new(1, 0)
 local barGrad = Instance.new("UIGradient", bar)
 barGrad.Color = ColorSequence.new{
-    ColorSequenceKeypoint.new(0, Color3.fromRGB(189, 224, 254)),
-    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 182, 219)),
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 200, 220)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(235, 150, 195)),
 }
 
 local pct = Instance.new("TextLabel", loader)
@@ -157,47 +157,48 @@ pct.BackgroundTransparency = 1
 pct.Text                   = "0%"
 pct.Font                   = Enum.Font.GothamBold
 pct.TextSize               = 14
-pct.TextColor3             = Color3.fromRGB(255, 220, 240)
+pct.TextColor3             = Color3.fromRGB(160, 90, 130)
 pct.ZIndex                 = 51
 
 -- instructions box
 local box = Instance.new("Frame", loader)
-box.Size                   = UDim2.new(0, 340, 0, 170)
-box.Position               = UDim2.new(0.5, -170, 0.58, 0)
-box.BackgroundColor3       = Color3.fromRGB(255, 245, 252)
-box.BackgroundTransparency = 0.05
+box.Size                   = UDim2.new(0, 360, 0, 200)
+box.Position               = UDim2.new(0.5, -180, 0.56, 0)
+box.BackgroundColor3       = Color3.fromRGB(255, 250, 253)
+box.BackgroundTransparency = 0.02
 box.BorderSizePixel        = 0
 box.ZIndex                 = 51
 local boxC = Instance.new("UICorner", box); boxC.CornerRadius = UDim.new(0, 18)
-local boxS = Instance.new("UIStroke", box); boxS.Thickness = 3; boxS.Color = Color3.fromRGB(255, 182, 219)
+local boxS = Instance.new("UIStroke", box); boxS.Thickness = 2; boxS.Color = Color3.fromRGB(245, 180, 210)
 
 local boxTitle = Instance.new("TextLabel", box)
 boxTitle.Size                   = UDim2.new(1, 0, 0, 30)
-boxTitle.Position               = UDim2.new(0, 0, 0, 10)
+boxTitle.Position               = UDim2.new(0, 0, 0, 12)
 boxTitle.BackgroundTransparency = 1
-boxTitle.Text                   = "before you start \xE2\x99\xA1"
+boxTitle.Text                   = "quick setup, cutie \xE2\x99\xA1"
 boxTitle.Font                   = Enum.Font.GothamBlack
 boxTitle.TextSize               = 18
-boxTitle.TextColor3             = Color3.fromRGB(120, 80, 160)
+boxTitle.TextColor3             = Color3.fromRGB(150, 70, 120)
 boxTitle.ZIndex                 = 52
 
 local instr = Instance.new("TextLabel", box)
-instr.Size                   = UDim2.new(1, -24, 0, 90)
-instr.Position               = UDim2.new(0, 12, 0, 44)
+instr.Size                   = UDim2.new(1, -28, 0, 130)
+instr.Position               = UDim2.new(0, 14, 0, 48)
 instr.BackgroundTransparency = 1
-instr.Text                   = "put your LVB on slot 2\nput a snowball on slot 3\nput a snowball on slot 4\n\notherwise the macro won't work!"
-instr.Font                   = Enum.Font.GothamSemibold
+instr.Text                   = "before you press the snowflake, set up your hotbar like this:\n\n\xE2\x80\xA2  slot 2  \xE2\x80\x94  your LVB\n\xE2\x80\xA2  slot 3  \xE2\x80\x94  Gold Snow\n\xE2\x80\xA2  slot 4  \xE2\x80\x94  Blue Snow\n\nif anything\xE2\x80\x99s in the wrong slot, the macro won\xE2\x80\x99t fire properly."
+instr.Font                   = Enum.Font.GothamMedium
 instr.TextSize               = 14
-instr.TextColor3             = Color3.fromRGB(80, 60, 110)
+instr.TextColor3             = Color3.fromRGB(110, 70, 100)
 instr.TextWrapped            = true
 instr.TextYAlignment         = Enum.TextYAlignment.Top
+instr.TextXAlignment         = Enum.TextXAlignment.Left
 instr.ZIndex                 = 52
 
 -- start button (revealed when loading is done)
 local startBtn = Instance.new("TextButton", loader)
 startBtn.Size                   = UDim2.new(0, 220, 0, 46)
-startBtn.Position               = UDim2.new(0.5, -110, 0.86, 0)
-startBtn.BackgroundColor3       = Color3.fromRGB(255, 182, 219)
+startBtn.Position               = UDim2.new(0.5, -110, 0.88, 0)
+startBtn.BackgroundColor3       = Color3.fromRGB(245, 175, 205)
 startBtn.BorderSizePixel        = 0
 startBtn.AutoButtonColor        = false
 startBtn.Font                   = Enum.Font.GothamBlack
@@ -208,16 +209,16 @@ startBtn.AutoLocalize           = false
 startBtn.Active                 = false
 startBtn.ZIndex                 = 52
 local sbC = Instance.new("UICorner", startBtn); sbC.CornerRadius = UDim.new(1, 0)
-local sbS = Instance.new("UIStroke", startBtn); sbS.Thickness = 3; sbS.Color = Color3.fromRGB(255, 245, 252)
+local sbS = Instance.new("UIStroke", startBtn); sbS.Thickness = 2; sbS.Color = Color3.fromRGB(255, 245, 252)
 
 local credit2 = Instance.new("TextLabel", loader)
 credit2.Size                   = UDim2.new(1, 0, 0, 18)
-credit2.Position               = UDim2.new(0, 0, 0.95, 0)
+credit2.Position               = UDim2.new(0, 0, 0.96, 0)
 credit2.BackgroundTransparency = 1
-credit2.Text                   = "\xE2\x99\xA1 by cuteuwu \xE2\x99\xA1"
+credit2.Text                   = "\xE2\x99\xA1 made with love by cuteuwu \xE2\x99\xA1"
 credit2.Font                   = Enum.Font.GothamBold
 credit2.TextSize               = 14
-credit2.TextColor3             = Color3.fromRGB(255, 220, 240)
+credit2.TextColor3             = Color3.fromRGB(180, 110, 150)
 credit2.ZIndex                 = 51
 
 -- run the loading bar
@@ -382,10 +383,50 @@ glow.Visible   = false
 btn.Visible    = false
 credit.Visible = false
 
+----------------------------------------------------------------
+-- RICH TRADE DETECTOR COVER
+-- Drops a cute draggable badge over the in-game "Rich Trade Detector"
+-- notification so it's hidden behind a sweet credit message instead.
+----------------------------------------------------------------
+local cover = Instance.new("Frame")
+cover.Name               = "RTDCover"
+cover.Size               = UDim2.new(0, 230, 0, 46)
+cover.Position           = UDim2.new(1, -260, 0, 280)  -- roughly over the in-game RTD spot, draggable
+cover.BackgroundColor3   = Color3.fromRGB(255, 235, 245)
+cover.BackgroundTransparency = 0.05
+cover.BorderSizePixel    = 0
+cover.Active             = true
+cover.Draggable          = true
+cover.ZIndex             = 4
+cover.Visible            = false
+cover.Parent             = gui
+
+local coverC = Instance.new("UICorner", cover); coverC.CornerRadius = UDim.new(0, 14)
+local coverS = Instance.new("UIStroke", cover); coverS.Thickness = 2; coverS.Color = PINK
+local coverGrad = Instance.new("UIGradient", cover)
+coverGrad.Color = ColorSequence.new{
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 240, 248)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 215, 232)),
+}
+coverGrad.Rotation = 90
+
+local coverText = Instance.new("TextLabel", cover)
+coverText.Size                   = UDim2.new(1, -16, 1, 0)
+coverText.Position               = UDim2.new(0, 8, 0, 0)
+coverText.BackgroundTransparency = 1
+coverText.Text                   = "CREDIT BY CUTEUWU \xE2\x99\xA1\nMADE WITH LOVE JUST FOR U"
+coverText.Font                   = Enum.Font.GothamBlack
+coverText.TextSize               = 12
+coverText.TextColor3             = Color3.fromRGB(150, 70, 120)
+coverText.TextWrapped            = true
+coverText.TextXAlignment         = Enum.TextXAlignment.Center
+coverText.ZIndex                 = 5
+
 startedSignal.Event:Connect(function()
     glow.Visible   = true
     btn.Visible    = true
     credit.Visible = true
+    cover.Visible  = true
     btn.BackgroundTransparency = 1
     for _, d in ipairs(btn:GetDescendants()) do
         if d:IsA("TextLabel") then d.TextTransparency = 1 end
