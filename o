@@ -297,20 +297,20 @@ end)
 
 -- soft glow behind the button
 local glow = Instance.new("Frame")
-glow.Size               = UDim2.new(0, 44, 0, 44)
-glow.Position           = UDim2.new(0.5, -22, 1, -120)
+glow.Size               = UDim2.new(0, 74, 0, 44)
+glow.Position           = UDim2.new(0.5, -37, 1, -120)
 glow.BackgroundColor3   = SHADOW
 glow.BackgroundTransparency = 0.7
 glow.BorderSizePixel    = 0
 glow.ZIndex             = 1
 glow.Parent             = gui
-local glowCorner = Instance.new("UICorner", glow); glowCorner.CornerRadius = UDim.new(1, 0)
+local glowCorner = Instance.new("UICorner", glow); glowCorner.CornerRadius = UDim.new(0, 5)
 
--- main snowflake button (tiny mode)
+-- main snowflake button (tiny rectangle)
 local btn = Instance.new("TextButton")
 btn.Name             = "SnowBtn"
-btn.Size             = UDim2.new(0, 30, 0, 30)
-btn.Position         = UDim2.new(0.5, -15, 1, -113)
+btn.Size             = UDim2.new(0, 60, 0, 30)
+btn.Position         = UDim2.new(0.5, -30, 1, -113)
 btn.BackgroundColor3 = CREAM
 btn.BorderSizePixel  = 0
 btn.Text             = ""
@@ -319,7 +319,7 @@ btn.Active           = true
 btn.Draggable        = true
 btn.ZIndex           = 2
 btn.Parent           = gui
-local btnCorner = Instance.new("UICorner", btn); btnCorner.CornerRadius = UDim.new(1, 0)
+local btnCorner = Instance.new("UICorner", btn); btnCorner.CornerRadius = UDim.new(0, 5)
 
 local grad = Instance.new("UIGradient", btn)
 grad.Color = ColorSequence.new{
@@ -335,8 +335,8 @@ btnStroke.Color           = PINK
 btnStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 
 local flake = Instance.new("TextLabel", btn)
-flake.Size                   = UDim2.new(1, 0, 1, 0)
-flake.Position               = UDim2.new(0, 0, 0, 0)
+flake.Size                   = UDim2.new(0, 22, 1, 0)
+flake.Position               = UDim2.new(0, 4, 0, 0)
 flake.BackgroundTransparency = 1
 flake.Text                   = "\xE2\x9D\x84"  -- snowflake
 flake.Font                   = Enum.Font.GothamBlack
@@ -346,12 +346,12 @@ flake.TextStrokeTransparency = 0.8
 flake.TextStrokeColor3       = PINK
 
 local label = Instance.new("TextLabel", btn)
-label.Size                   = UDim2.new(0, 60, 0, 12)
-label.Position               = UDim2.new(0.5, -30, 1, 2)
+label.Size                   = UDim2.new(1, -28, 1, 0)
+label.Position               = UDim2.new(0, 26, 0, 0)
 label.BackgroundTransparency = 1
 label.Text                   = "snow~"
 label.Font                   = Enum.Font.GothamBold
-label.TextSize               = 10
+label.TextSize               = 12
 label.TextColor3             = DEEP
 
 local credit = Instance.new("TextLabel")
@@ -381,21 +381,21 @@ end)
 task.spawn(function()
     while glow.Parent do
         TweenService:Create(glow, TweenInfo.new(1.6, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut),
-            {BackgroundTransparency = 0.85, Size = UDim2.new(0, 52, 0, 52), Position = UDim2.new(0.5, -26, 1, -124)}):Play()
+            {BackgroundTransparency = 0.85, Size = UDim2.new(0, 84, 0, 52), Position = UDim2.new(0.5, -42, 1, -124)}):Play()
         task.wait(1.6)
         TweenService:Create(glow, TweenInfo.new(1.6, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut),
-            {BackgroundTransparency = 0.65, Size = UDim2.new(0, 44, 0, 44), Position = UDim2.new(0.5, -22, 1, -120)}):Play()
+            {BackgroundTransparency = 0.65, Size = UDim2.new(0, 74, 0, 44), Position = UDim2.new(0.5, -37, 1, -120)}):Play()
         task.wait(1.6)
     end
 end)
 
 local function squish()
     TweenService:Create(btn, TweenInfo.new(0.08, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-        {Size = UDim2.new(0, 26, 0, 26)}):Play()
+        {Size = UDim2.new(0, 54, 0, 26)}):Play()
     btnStroke.Color = Color3.fromRGB(255, 255, 255)
     task.wait(0.1)
     TweenService:Create(btn, TweenInfo.new(0.18, Enum.EasingStyle.Back, Enum.EasingDirection.Out),
-        {Size = UDim2.new(0, 30, 0, 30)}):Play()
+        {Size = UDim2.new(0, 60, 0, 30)}):Play()
     btnStroke.Color = PINK
 end
 
