@@ -57,51 +57,10 @@ end
 -- THE COMBO
 ----------------------------------------------------------------
 
--- grab the player's humanoid (used to verify they're moving)
-local function getHumanoid()
-    local char = LocalPlayer.Character
-    if not char then return nil end
-    return char:FindFirstChildOfClass("Humanoid")
-end
-
-local function isMoving()
-    local hum = getHumanoid()
-    if not hum then return false end
-    return hum.MoveDirection.Magnitude > 0.1
-end
-
-local function flashWarning(text)
-    -- shows a tiny pink "move pls!" bubble above the snow button
-    local warn = Instance.new("TextLabel")
-    warn.Size                   = UDim2.new(0, 160, 0, 32)
-    warn.Position               = UDim2.new(0.5, -80, 1, -300)
-    warn.BackgroundColor3       = Color3.fromRGB(255, 235, 245)
-    warn.BackgroundTransparency = 0.05
-    warn.BorderSizePixel        = 0
-    warn.Text                   = text
-    warn.Font                   = Enum.Font.GothamBold
-    warn.TextSize               = 14
-    warn.TextColor3             = Color3.fromRGB(150, 70, 120)
-    warn.ZIndex                 = 9
-    warn.Parent                 = LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("cuteuwuSnow")
-    local c = Instance.new("UICorner", warn); c.CornerRadius = UDim.new(1, 0)
-    local s = Instance.new("UIStroke", warn); s.Thickness = 2; s.Color = Color3.fromRGB(255, 182, 219)
-    task.delay(1.4, function()
-        if warn and warn.Parent then warn:Destroy() end
-    end)
-end
-
 local busy = false
 
 local function fireSnow()
     if busy then return end
-
-    -- player must be moving for the throws to land properly
-    if not isMoving() then
-        flashWarning("move first, cutie \xE2\x99\xA1")
-        return
-    end
-
     busy = true
     for i, slot in ipairs(CFG.SNOW_SEQUENCE) do
         pressKey(NUM_KEYS[slot] or Enum.KeyCode.One)
@@ -227,7 +186,7 @@ local instr = Instance.new("TextLabel", box)
 instr.Size                   = UDim2.new(1, -28, 0, 130)
 instr.Position               = UDim2.new(0, 14, 0, 48)
 instr.BackgroundTransparency = 1
-instr.Text                   = "before you press the snowflake, set up your hotbar like this:\n\n\xE2\x80\xA2  slot 2  \xE2\x80\x94  your LVB\n\xE2\x80\xA2  slot 3  \xE2\x80\x94  Gold Snow\n\xE2\x80\xA2  slot 4  \xE2\x80\x94  Blue Snow\n\n\xE2\x9A\xA0\xEF\xB8\x8F  you have to be MOVING when you tap the snowflake or it won\xE2\x80\x99t fire!"
+instr.Text                   = "before you press the snowflake, set up your hotbar like this:\n\n\xE2\x80\xA2  slot 2  \xE2\x80\x94  your LVB\n\xE2\x80\xA2  slot 3  \xE2\x80\x94  Gold Snow\n\xE2\x80\xA2  slot 4  \xE2\x80\x94  Blue Snow\n\nif anything\xE2\x80\x99s in the wrong slot, the macro won\xE2\x80\x99t fire properly."
 instr.Font                   = Enum.Font.GothamMedium
 instr.TextSize               = 14
 instr.TextColor3             = Color3.fromRGB(110, 70, 100)
